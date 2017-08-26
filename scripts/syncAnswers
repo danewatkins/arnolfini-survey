@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# get username and password
+USER=""
+PASS=""
+HOST=""
+LCD="/var/www/html/arnolfini-survey/answers"
+RCD="/public_html/arnolfini/answers"
+
+lftp -f "
+set ssl:verify-certificate no;
+open $HOST
+user $USER $PASS
+lcd $LCD
+mirror --reverse --verbose $LCD $RCD
+bye
+"
+

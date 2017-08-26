@@ -1,0 +1,4 @@
+#ignore the text files in answer
+answers/
+#ignore the osx files 
+*._
