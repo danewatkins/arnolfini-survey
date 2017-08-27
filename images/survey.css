@@ -1,6 +1,8 @@
 body{
-  /*overflow:hidden;*/
-  cursor: none;
+  /*overflow:hidden;
+  cursor: crosshair;
+   change the cursor to no cursor in etc/lightdm/lightdm.conf
+   xserver-command=X -nocursor*/
 }
 @font-face {
     font-family: myFirstFont;
