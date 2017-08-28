@@ -90,16 +90,16 @@ Check cron log to see if the crontabs are working
 
 ### Set up Pi for kiosk mode
 
-cp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsecp /etc/xdg/lxsession/LXDE-pi/autostart /home/pi/.config/lxsession/LXDE-pi/autostart
+cp /etc/xdg/lxsession/LXDE-pi/autostart  /home/pi/.config/lxsession/LXDE-pi/autostart
 
 sudo vim /home/pi/.config/lxsession/LXDE-pi/autostart
 
-#@xscreensaver -no-splash  # comment this line out to disable screensaver
+#@xscreensaver -no-splash
+@point-rpi
 @xset s off
 @xset -dpms
 @xset s noblank
-@chromium-browser --incognito --kiosk http://localhost/  # load chromium afte
-@chromium-browser --kiosk --start-maximised --incognito --disable-pinch --overscroll-history-navigation=0
+@chromium-browser --kiosk --start-maximised --incognito --disable-pinch --overscroll-history-navigation=0 http://localhost/arnolfini-survey/pages/1.php
 
 ### Hide cursor
 sudo vim etc/lightdm/lightdm.conf
