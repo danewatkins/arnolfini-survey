@@ -1,7 +1,7 @@
 <?php
 // var_dump($_POST);
 session_start();
-$_SESSION["under16"]="";
+if(!isset($_SESSION["under16"]))$_SESSION["under16"]="";
 if(isset($_POST["page"])){
 	$posted_page = $_POST["page"];
 }else{
@@ -16,7 +16,6 @@ if ($posted_page==2){
 	}
 }
 
-
 if(isset($_POST["answer"])){
 	if($_SESSION["under16"]=="under"){
 		$posted_answer="under 16";
@@ -28,7 +27,7 @@ if(isset($_POST["answer"])){
 }
 
 if ($posted_page==1){
-	session_destroy();
+	$posted_answer= $_POST["answer"];
 }
 #var_dump ($_SESSION);
 date_default_timezone_set('Europe/London');
