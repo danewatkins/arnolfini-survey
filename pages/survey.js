@@ -1,14 +1,6 @@
 $("#survey").fadeIn(1000)
 
 var lis = [];
-
-console.log("page no "+pageNo)
-if(pageNo==15||pageNo==16||pageNo==19||pageNo==22||pageNo==12){
-  butt='#next'
-}else{
-  butt='#survey img'
-}
-
 var touchme=1
 var method = method || "post"; // post (set to default) or get
 var url = nextPage+".php";
@@ -22,6 +14,11 @@ hiddenField.setAttribute("name", "answer");
 hiddenField2.setAttribute("type", "hidden");
 hiddenField2.setAttribute("name", "page");
 
+if(pageNo==15||pageNo==16||pageNo==19||pageNo==22||pageNo==12){
+  butt='#next'
+}else{
+  butt='#survey img'
+}
 
   $(butt).one( "touchstart mousedown", function(e){
     var out = {x:0, y:0};
@@ -33,9 +30,13 @@ hiddenField2.setAttribute("name", "page");
       out.x = e.pageX;
       out.y = e.pageY;
     }
-
-    var margin = Math.ceil(($( document ).width()-1024)/2)
-    // <p>loading data<br>"+ (out.x-margin)+"</p>
+    //
+    //
+    //
+    var margin = 128;
+    //
+    //
+    //
     $("#bubble").html("<img src='"+imageRoot+"splatt.gif'>");
     $("#bubble").css("left",""+(out.x+70)+"px");
     $("#bubble").css("top",out.y-60+"px");
@@ -53,11 +54,7 @@ hiddenField2.setAttribute("name", "page");
     else{
       ans=(out.x-margin)+","+out.y
     }
-
-
     // Create the form object
-
-
     setTimeout(function() {
       hiddenField.setAttribute("value", ans);
       hiddenField2.setAttribute("value", pageNo);
@@ -65,7 +62,6 @@ hiddenField2.setAttribute("name", "page");
       form.appendChild(hiddenField2);
       document.body.appendChild(form); // inject the form object into the body section
       form.submit();
-      // window.location.href = "../../"+locale+"/question/"+nextPage;
     }, 80);
 
   });
