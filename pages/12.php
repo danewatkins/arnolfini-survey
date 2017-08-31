@@ -61,18 +61,21 @@
         txt = txt.substr(0,(txt.length)-1);
       }
       document.getElementById('textbox').value = txt;
+      $('textarea').focus();
       }
+
   </script>
 <style>
   #survey{
     display: none;
   }
   body{
-    /*cursor: none;*/
+    cursor: crosshair;
     overflow:hidden;
-    background-color: #BDDD99;
+    /*background-color: #BDDD99;*/
 
   }
+  textarea:focus { outline: none; }
 
 </style>
 <link rel="stylesheet" type="text/css" href="../images/survey.css">
@@ -92,7 +95,7 @@
       <div id="survey">
       <img  src="../images/three-words-keyboard-2.gif"  alt="A typewriter spits into a an antique voice recorder that recoils under the impact"/>
   <div id="words">
-    <textarea rows="3" cols="27" id="textbox"  placeholder="Enter three words to describe your experience"></textarea><br>
+    <textarea rows="3" cols="27" id="textbox"  placeholder="Enter three words to describe your experience" autofocus></textarea><br>
   </div>
   <div id="keyboard">
   <div id="del" class="keys" style="Background;red;position:absolute;top:140px;left:430px;width:170px;opacity:0;" onclick="clicked('delete');"/></div>
