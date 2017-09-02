@@ -1,7 +1,7 @@
 $("#survey").fadeIn(1000)
-$( "#lightbox" ).append("<img width='128px' id='submit-gif' src='"+imageRoot+"keys/submit.gif'>");
-$("#submit-gif").css("margin-left","1130px");
-$("#submit-gif").css("margin-top","600px");
+$( "#lightbox" ).append("<img width='180px' id='submit-gif' src='"+imageRoot+"keys/submit.gif'>");
+$("#submit-gif").css("margin-left","1080px");
+$("#submit-gif").css("margin-top","650px");
 
 var lis = [];
 var touchme=1

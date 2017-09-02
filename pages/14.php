@@ -13,7 +13,7 @@
   body{
     /*cursor: none;*/
     overflow:hidden;
-    /*background-color: #cc6633;*/
+    background-color: #cc6633;
 
   }
 

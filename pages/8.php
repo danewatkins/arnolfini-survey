@@ -16,7 +16,14 @@
     background-color: #6699cc;
 
   }
-
+  #screen{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:1280px;
+    height:800px;
+    background: red;
+  }
 </style>
 <link rel="stylesheet" type="text/css" href="../images/survey.css">
 <script src="../images/jquery.min.js"></script>
@@ -24,18 +31,17 @@
 <!-- <script type="text/javascript" src="../images/survey.js"></script> -->
 </head>
 <body>
+  <!-- <div id="screen"></div> -->
   <div id="lightbox"></div>
-    <div id="bubble"></div>
-    <div id="main">
-      <div id="loader">
-      <img id="loader1" src="../images/loader.gif" >
-      <img id="preparing" src="../images/getting-ready.gif">
-    </div>
-
-      <div id="survey">
-      <img  src="../images/6-local-impact-min.gif"  alt="Animated Clifton Suspension Bridges faces off to Tower Bridge"/>
-
-</div><!-- close #survey -->
+  <div id="bubble"></div>
+  <div id="main">
+    <div id="loader">
+    <img id="loader1" src="../images/loader.gif" >
+    <img id="preparing" src="../images/getting-ready.gif">
+  </div>
+  <div id="survey">
+    <img  src="../images/6-local-impact-min.gif"  alt="Animated Clifton Suspension Bridges faces off to Tower Bridge"/>
+  </div><!-- close #survey -->
 <div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
 </div><!-- close #main -->
 </body>

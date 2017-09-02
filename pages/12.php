@@ -11,9 +11,9 @@
 
   <style>
     body{
-      /*cursor: crosshair;
-      overflow:hidden;*/
-      /*background-color: #BDDD99;*/
+
+      overflow:hidden;
+      background-color: #BDDD99;
 
     }
 
