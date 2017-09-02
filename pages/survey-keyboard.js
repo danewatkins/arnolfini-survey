@@ -21,7 +21,7 @@ $(".keys").on( "touchstart mousedown", function(e){
 
     txt = document.getElementById('textbox').value;
     if(val != 'delete'){
-      $(obj).attr("width","90")
+      if(val != ' ')$(obj).attr("width","90")
       txt = txt + '' + val;
     }else{
       txt = txt.substr(0,(txt.length)-1);
