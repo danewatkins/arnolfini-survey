@@ -10,12 +10,14 @@ $(".keys").on( "touchstart mousedown", function(e){
 
       });
   function clicked(obj,val){
-    // clearTimeout(timer)
-    console.log ($(obj).attr("src"))
+
     var imgSrc=$(obj).attr("src")
     var imgOrig=$(obj).attr("src")
     imgSrc = imgSrc.substring(0, imgSrc.length - 3);
     $(obj).attr("src",imgSrc+"png")
+
+    $(obj).attr("width","90")
+    console.log(obj)
 
     txt = document.getElementById('textbox').value;
     if(val != 'delete'){
@@ -25,7 +27,7 @@ $(".keys").on( "touchstart mousedown", function(e){
     }
     document.getElementById('textbox').value = txt;
     $('textarea').focus();
-    var timer = setTimeout(function(){ $(obj).attr("src",imgOrig) }, 200);
+    var timer = setTimeout(function(){ $(obj).attr("src",imgOrig) }, 20000);
 
     // $(obj).attr("src",imgOrig)
   }
