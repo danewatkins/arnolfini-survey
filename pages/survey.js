@@ -19,6 +19,8 @@ hiddenField.setAttribute("name", "answer");
 hiddenField2.setAttribute("type", "hidden");
 hiddenField2.setAttribute("name", "page");
 
+var Xpos
+var Ypos
 var touchLeft = 200
 var touchRight = 1070
 var touchTop = 500
@@ -35,14 +37,9 @@ if (pageNo==20){
   var touchTop = 211
   var touchBottom = 678
 }
-if(pageNo==15||pageNo==16||pageNo==19||pageNo==22||pageNo==12){
-  butt='#next'
-}else{
-  // butt='#survey img'
-  butt='#lightbox'
-}
 
-  $(butt).on( "touchstart mousedown", function(e){
+
+  $("#lightbox").on( "touchstart mousedown", function(e){
     // does it need a touchmove capture event?
     if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
       var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
@@ -70,19 +67,8 @@ if(pageNo==15||pageNo==16||pageNo==19||pageNo==22||pageNo==12){
     $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
 
     $("#bubble").hide()
-    if(pageNo==12||pageNo==19||pageNo==22){
-      ans=$("#textbox").val()
-    }else if((pageNo==15||pageNo==16)){
-      $('.inner input:checked').each(function() {
-          lis.push($(this).attr('name'));
-      });
-      lis.push($("#textbox").val())
-      ans=lis.toString()
-    }
-    else{
-      ans=(out.x-margin)+","+out.y
-    }
-    console.log("submit")
+    ans=(out.x-margin)+","+out.y
+
     hiddenField.setAttribute("value", ans);
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);
