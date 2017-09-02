@@ -33,12 +33,7 @@
       height:300px;
       top:410px;
     }
-    #delete{
-      position: absolute;
-      top:260px;
-      left:900px;
-      z-index: 89;
-    }
+
     .rows{
       background: green1;
       width:1100px;
@@ -75,6 +70,14 @@
       font-size: 36px;
       line-height: 38px;
       }
+      #delete{
+        position: absolute;
+        top:276px;
+        left:750px;
+        z-index: 89;
+        height:110px;
+      }
+
   </style>
 <script src="../images/jquery.min.js"></script>
 <!-- <script type="text/javascript" src="../images/survey.js"></script> -->
@@ -85,47 +88,47 @@
       <img  src="../images/three-words-keyboard-3.gif"  alt="Animation of a hand poking another hand"/>
     </div><!-- close #survey -->
     <textarea rows="3" cols="27" id="textbox"  placeholder="Enter three words to describe your experience" autofocus></textarea><br>
-    <img  id="delete" class="keys" height="100" src="../images/keys/delete.gif" onclick="clicked('delete');"/>
+    <img  id="delete" class="keys"  src="../images/keys/delete.gif" onclick="clicked(this,'delete');"/>
     <div id="keyboard">
       <div id="row2" class="rows">
-        <img class="keys" src="../images/keys/key-q.gif" onclick="clicked('Q');"/>
-        <img class="keys" src="../images/keys/key-w.gif" onclick="clicked('W');"/>
-        <img class="keys" src="../images/keys/key-e.gif" onclick="clicked('E');"/>
-        <img class="keys" src="../images/keys/key-r.gif" onclick="clicked('R');"/>
-        <img class="keys" src="../images/keys/key-t.gif" onclick="clicked('T');"/>
-        <img class="keys" src="../images/keys/key-y.gif" onclick="clicked('Y');"/>
-        <img class="keys" src="../images/keys/key-u.gif" onclick="clicked('U');"/>
-        <img class="keys" src="../images/keys/key-i.gif" onclick="clicked('I');"/>
-        <img class="keys" src="../images/keys/key-o.gif" onclick="clicked('O');"/>
-        <img class="keys" src="../images/keys/key-p.gif" onclick="clicked('P');"/>
+        <img class="keys" src="../images/keys/key-q.gif" onclick="clicked(this,'Q');"/>
+        <img class="keys" src="../images/keys/key-w.gif" onclick="clicked(this,'W');"/>
+        <img class="keys" src="../images/keys/key-e.gif" onclick="clicked(this,'E');"/>
+        <img class="keys" src="../images/keys/key-r.gif" onclick="clicked(this,'R');"/>
+        <img class="keys" src="../images/keys/key-t.gif" onclick="clicked(this,'T');"/>
+        <img class="keys" src="../images/keys/key-y.gif" onclick="clicked(this,'Y');"/>
+        <img class="keys" src="../images/keys/key-u.gif" onclick="clicked(this,'U');"/>
+        <img class="keys" src="../images/keys/key-i.gif" onclick="clicked(this,'I');"/>
+        <img class="keys" src="../images/keys/key-o.gif" onclick="clicked(this,'O');"/>
+        <img class="keys" src="../images/keys/key-p.gif" onclick="clicked(this,'P');"/>
       </div>
       <div id="row3" class="rows">
-        <img class="keys" src="../images/keys/key-a.gif" onclick="clicked('A');"/>
-        <img class="keys" src="../images/keys/key-s.gif" onclick="clicked('S');"/>
-        <img class="keys" src="../images/keys/key-d.gif" onclick="clicked('D');"/>
-        <img class="keys" src="../images/keys/key-f.gif" onclick="clicked('F');"/>
-        <img class="keys" src="../images/keys/key-g.gif" onclick="clicked('G');"/>
-        <img class="keys" src="../images/keys/key-h.gif" onclick="clicked('H');"/>
-        <img class="keys" src="../images/keys/key-j.gif" onclick="clicked('J');"/>
-        <img class="keys" src="../images/keys/key-k.gif" onclick="clicked('K');"/>
-        <img class="keys" src="../images/keys/key-l.gif" onclick="clicked('L');"/>
+        <img class="keys" src="../images/keys/key-a.gif" onclick="clicked(this,'A');"/>
+        <img class="keys" src="../images/keys/key-s.gif" onclick="clicked(this,'S');"/>
+        <img class="keys" src="../images/keys/key-d.gif" onclick="clicked(this,'D');"/>
+        <img class="keys" src="../images/keys/key-f.gif" onclick="clicked(this,'F');"/>
+        <img class="keys" src="../images/keys/key-g.gif" onclick="clicked(this,'G');"/>
+        <img class="keys" src="../images/keys/key-h.gif" onclick="clicked(this,'H');"/>
+        <img class="keys" src="../images/keys/key-j.gif" onclick="clicked(this,'J');"/>
+        <img class="keys" src="../images/keys/key-k.gif" onclick="clicked(this,'K');"/>
+        <img class="keys" src="../images/keys/key-l.gif" onclick="clicked(this,'L');"/>
       </div>
       <div id="row4" class="rows">
-        <img class="keys" src="../images/keys/key-z.gif" onclick="clicked('Z');"/>
-        <img class="keys" src="../images/keys/key-x.gif" onclick="clicked('X');"/>
-        <img class="keys" src="../images/keys/key-c.gif" onclick="clicked('C');"/>
-        <img class="keys" src="../images/keys/key-v.gif" onclick="clicked('V');"/>
-        <img class="keys" src="../images/keys/key-b.gif" onclick="clicked('B');"/>
-        <img class="keys" src="../images/keys/key-n.gif" onclick="clicked('N');"/>
-        <img class="keys" src="../images/keys/key-m.gif" onclick="clicked('M');"/>
+        <img class="keys" src="../images/keys/key-z.gif" onclick="clicked(this,'Z');"/>
+        <img class="keys" src="../images/keys/key-x.gif" onclick="clicked(this,'X');"/>
+        <img class="keys" src="../images/keys/key-c.gif" onclick="clicked(this,'C');"/>
+        <img class="keys" src="../images/keys/key-v.gif" onclick="clicked(this,'V');"/>
+        <img class="keys" src="../images/keys/key-b.gif" onclick="clicked(this,'B');"/>
+        <img class="keys" src="../images/keys/key-n.gif" onclick="clicked(this,'N');"/>
+        <img class="keys" src="../images/keys/key-m.gif" onclick="clicked(this,'M');"/>
         <img class="keys" id="submit-gif" src="../images/keys/submit.gif" />
       </div>
       <div id="row5" class="rows">
-        <img class="keys" src="../images/keys/key-00-exclamation.gif" onclick="clicked('!');"/>
-        <img class="keys" src="../images/keys/key-00-question.gif" onclick="clicked('?');"/>
-        <img class="keys" src="../images/keys/space-bar.gif" onclick="clicked(' ');"/>
-        <img class="keys" src="../images/keys/key-00-comma.gif" onclick="clicked(',');"/>
-        <img class="keys" src="../images/keys/key-00-period.gif" onclick="clicked('.');"/>
+        <img class="keys" src="../images/keys/key-00-exclamation.gif" onclick="clicked(this,'!');"/>
+        <img class="keys" src="../images/keys/key-00-question.gif" onclick="clicked(this,'?');"/>
+        <img class="keys" src="../images/keys/space-bar.gif" onclick="clicked(this,' ');"/>
+        <img class="keys" src="../images/keys/key-00-comma.gif" onclick="clicked(this,',');"/>
+        <img class="keys" src="../images/keys/key-00-period.gif" onclick="clicked(this,'.');"/>
       </div>
     </div>
 
