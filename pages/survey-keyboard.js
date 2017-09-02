@@ -27,7 +27,7 @@ $(".keys").on( "touchstart mousedown", function(e){
     }
     document.getElementById('textbox').value = txt;
     $('textarea').focus();
-    var timer = setTimeout(function(){ $(obj).attr("src",imgOrig) }, 20000);
+    var timer = setTimeout(function(){ $(obj).attr("src",imgOrig) }, 120);
 
     // $(obj).attr("src",imgOrig)
   }
