@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- redirect after 120 seconds--> <meta http-equiv="refresh" content="180;url=1.php" />  <title></title>
+  <!-- redirect after 120 seconds--> <meta http-equiv="refresh" content="20;url=1.php" />  <title></title>
   <meta name="description" content="Animated antique mechanical calculator">
   <meta name="author" content="Dane Watkins">
   <!-- <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet"> -->
 <style>
-  #survey{
-    display: none;
-  }
+
   body{
     /*cursor: none;*/
     overflow:hidden;
@@ -36,7 +34,7 @@
       <img  src="../images/thanks.gif"  alt="Animated antique mechanical calculator"/>
 
 </div><!-- close #survey -->
-<div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
+<!-- <div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div> -->
 </div><!-- close #main -->
 </body>
 <script type="text/javascript">
@@ -44,7 +42,12 @@ var imageRoot="../images/";
 var locale="Arnolfini";
 var pageNo=23;
 var nextPage=1;
+$('body').on( "touchstart mousedown", function(e){
+  window.location.href = '1.php';
 
+
+
+});
 </script>
-<script src="survey.js"></script>
+<!-- <script src="survey.js"></script> -->
 </html>

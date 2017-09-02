@@ -1,4 +1,5 @@
-<?php include('inc.php'); ?><!DOCTYPE html>
+<?php include('inc.php'); ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -6,149 +7,137 @@
   <meta name="description" content="A typewriter spits into a an antique voice recorder that recoils under the impact">
   <meta name="author" content="Dane Watkins">
   <!-- <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="../images/survey.css">
+
   <style>
-    #keyboard{
+    body{
+      /*cursor: crosshair;
+      overflow:hidden;*/
+      /*background-color: #BDDD99;*/
+
+    }
+
+    #main{
       position:absolute;
-      top:200px;
-      left:150px;
-      background: red1;
-      width:1080px;
-      height:768px;
+      top:0px;
+      left:0px;
+      background: red;
+      width:1280px;
+      height:800px;
+    }
+    #keyboard{
+      background: yellow1;
+      position:absolute;
+      width:1100px;
+      left:90px;
+      height:300px;
+      top:410px;
+    }
+    #delete{
+      position: absolute;
+      top:260px;
+      left:900px;
+      z-index: 89;
     }
     .rows{
-      opacity:0;
-      margin-top:4px;
+      background: green1;
+      width:1100px;
+      text-align: center;
     }
-    .keys{
-      background: blue;
-      width:65px;
-      height: 60px;
-      display:inline-block;
-      margin-left:4px;
+    .keys {
+      height:90px;
     }
     #row1{
-      margin-top:150px;
+      margin-top:0px;
     }
     #row2{
-      margin-top:219px;
+      margin-top:0px;
     }
     #row3{
-      margin-top:3px;
+      margin-top:0px;
     }
     #row4{
-      margin-top: 7px;
+      margin-top: 0px;
     }
-    #words{
-      position:absolute;
-      top:190px;
-      left:410px;
-    }
+    textarea:focus{
+       outline: none;
+     }
+
     textarea{
+      position: absolute;
+      top:81px;
+      left:500px;
       font-family: 'myFirstFont', cursive;
       border: yellow;
-      width:200px;
+      width:252px;
+      height:138px;
       padding:5px;
-      font-size: 20px;
+      font-size: 36px;
+      line-height: 38px;
       }
   </style>
-  <script>
-    function clicked(val){
-      var txt;
-      txt = document.getElementById('textbox').value;
-      if(val != 'delete'){
-        txt = txt + '' + val;
-      }else{
-        txt = txt.substr(0,(txt.length)-1);
-      }
-      document.getElementById('textbox').value = txt;
-      $('textarea').focus();
-      }
-
-  </script>
-<style>
-  #survey{
-    display: none;
-  }
-  body{
-    cursor: crosshair;
-    overflow:hidden;
-    /*background-color: #BDDD99;*/
-
-  }
-  textarea:focus { outline: none; }
-
-</style>
-<link rel="stylesheet" type="text/css" href="../images/survey.css">
 <script src="../images/jquery.min.js"></script>
-
 <!-- <script type="text/javascript" src="../images/survey.js"></script> -->
 </head>
 <body>
-  <div id="lightbox"></div>
-    <div id="bubble"></div>
-    <div id="main">
-      <div id="loader">
-      <img id="loader1" src="../images/loader.gif" >
-      <img id="preparing" src="../images/getting-ready.gif">
+  <div id="main">
+    <div id="survey">
+      <img  src="../images/three-words-keyboard-3.gif"  alt="Animation of a hand poking another hand"/>
+    </div><!-- close #survey -->
+    <textarea rows="3" cols="27" id="textbox"  placeholder="Enter three words to describe your experience" autofocus></textarea><br>
+    <img  id="delete" class="keys" height="100" src="../images/keys/delete.gif" onclick="clicked('delete');"/>
+    <div id="keyboard">
+      <div id="row2" class="rows">
+        <img class="keys" src="../images/keys/key-q.gif" onclick="clicked('Q');"/>
+        <img class="keys" src="../images/keys/key-w.gif" onclick="clicked('W');"/>
+        <img class="keys" src="../images/keys/key-e.gif" onclick="clicked('E');"/>
+        <img class="keys" src="../images/keys/key-r.gif" onclick="clicked('R');"/>
+        <img class="keys" src="../images/keys/key-t.gif" onclick="clicked('T');"/>
+        <img class="keys" src="../images/keys/key-y.gif" onclick="clicked('Y');"/>
+        <img class="keys" src="../images/keys/key-u.gif" onclick="clicked('U');"/>
+        <img class="keys" src="../images/keys/key-i.gif" onclick="clicked('I');"/>
+        <img class="keys" src="../images/keys/key-o.gif" onclick="clicked('O');"/>
+        <img class="keys" src="../images/keys/key-p.gif" onclick="clicked('P');"/>
+      </div>
+      <div id="row3" class="rows">
+        <img class="keys" src="../images/keys/key-a.gif" onclick="clicked('A');"/>
+        <img class="keys" src="../images/keys/key-s.gif" onclick="clicked('S');"/>
+        <img class="keys" src="../images/keys/key-d.gif" onclick="clicked('D');"/>
+        <img class="keys" src="../images/keys/key-f.gif" onclick="clicked('F');"/>
+        <img class="keys" src="../images/keys/key-g.gif" onclick="clicked('G');"/>
+        <img class="keys" src="../images/keys/key-h.gif" onclick="clicked('H');"/>
+        <img class="keys" src="../images/keys/key-j.gif" onclick="clicked('J');"/>
+        <img class="keys" src="../images/keys/key-k.gif" onclick="clicked('K');"/>
+        <img class="keys" src="../images/keys/key-l.gif" onclick="clicked('L');"/>
+      </div>
+      <div id="row4" class="rows">
+        <img class="keys" src="../images/keys/key-z.gif" onclick="clicked('Z');"/>
+        <img class="keys" src="../images/keys/key-x.gif" onclick="clicked('X');"/>
+        <img class="keys" src="../images/keys/key-c.gif" onclick="clicked('C');"/>
+        <img class="keys" src="../images/keys/key-v.gif" onclick="clicked('V');"/>
+        <img class="keys" src="../images/keys/key-b.gif" onclick="clicked('B');"/>
+        <img class="keys" src="../images/keys/key-n.gif" onclick="clicked('N');"/>
+        <img class="keys" src="../images/keys/key-m.gif" onclick="clicked('M');"/>
+        <img class="keys" id="submit-gif" src="../images/keys/submit.gif" />
+      </div>
+      <div id="row5" class="rows">
+        <img class="keys" src="../images/keys/key-00-exclamation.gif" onclick="clicked('!');"/>
+        <img class="keys" src="../images/keys/key-00-question.gif" onclick="clicked('?');"/>
+        <img class="keys" src="../images/keys/space-bar.gif" onclick="clicked(' ');"/>
+        <img class="keys" src="../images/keys/key-00-comma.gif" onclick="clicked(',');"/>
+        <img class="keys" src="../images/keys/key-00-period.gif" onclick="clicked('.');"/>
+      </div>
     </div>
 
-      <div id="survey">
-      <img  src="../images/three-words-keyboard-2.gif"  alt="A typewriter spits into a an antique voice recorder that recoils under the impact"/>
-  <div id="words">
-    <textarea rows="3" cols="27" id="textbox"  placeholder="Enter three words to describe your experience" autofocus></textarea><br>
-  </div>
-  <div id="keyboard">
-  <div id="del" class="keys" style="Background;red;position:absolute;top:140px;left:430px;width:170px;opacity:0;" onclick="clicked('delete');"/></div>
-  <div id="row2" class="rows">
-    <div id="" class="keys" style="width:75px;height:68px;margin-top:14px;" onclick="clicked('q');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('w');"/></div>
-    <div id="" class="keys" style="margin-left:6px;width:71px;" onclick="clicked('e');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('r');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('t');"/></div>
-    <div id="" class="keys" style="margin-left:2px;" onclick="clicked('y');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('u');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('i');"/></div>
-    <div id="" class="keys" style="margin-bottom:2px;" onclick="clicked('o');"/></div>
-    <div id="" class="keys" style="margin-bottom:4px;margin-left:5px;" onclick="clicked('p');"/></div>
-  </div>
-  <!-- <div id="" class="keys" style=";" onclick="clicked('[');"/></div>
-  <div id="" class="keys" style=";" onclick="clicked(']');"/></div>
-  <div id="" class="keys" style=";" onclick="clicked('\\');"/></div> -->
-  <div id="row3" class="rows">
-    <div id="" class="keys" style="margin-left:50px;" onclick="clicked('a');"/></div>
-    <div id="" class="keys" style="margin-left:7px;" onclick="clicked('s');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('d');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('f');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('g');"/></div>
-    <div id="" class="keys" style="margin-left:10px;" onclick="clicked('h');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('j');"/></div>
-    <div id="" class="keys" style="margin-bottom:2px;" onclick="clicked('k');"/></div>
-    <div id="" class="keys" style="margin-left:10px;margin-bottom:3px;" onclick="clicked('l');"/></div>
-  </div>
-  <div id="row4" class="rows">
-    <div id="" class="keys" style="margin-left:85px;" onclick="clicked('z');"/></div>
-    <div id="" class="keys" style="margin-left:8px;" onclick="clicked('x');"/></div>
-    <div id="" class="keys" style="margin-left:8px;" onclick="clicked('c');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('v');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('b');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('n');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('m');"/></div>
-    <div id="next" class="keys" style="width:150px;margin-left:10px;margin-bottom:3px;"/></div>
-  </div>
-  <div id="row5" class="rows">
-    <div id="" class="keys" style="margin-left:225px;width:370px;height:78px;" onclick="clicked(' ');"/></div>
-  </div>
-</div>
-</div><!-- close #survey -->
-<div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
-</div><!-- close #main -->
+    <div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
+  </div><!-- close #main -->
 </body>
 <script type="text/javascript">
-var imageRoot="../images/";
-var locale="Arnolfini";
-var pageNo=12;
-var nextPage=13;
+  var imageRoot="../images/";
+  var pageNo=12;
+  var nextPage=13;
+  var url = nextPage+".php";
 
 </script>
-<script src="survey.js"></script>
+<script src="survey-keyboard.js"></script>
 </html>
