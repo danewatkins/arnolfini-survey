@@ -16,11 +16,12 @@ $(".keys").on( "touchstart mousedown", function(e){
     imgSrc = imgSrc.substring(0, imgSrc.length - 3);
     $(obj).attr("src",imgSrc+"png")
 
-    $(obj).attr("width","90")
+
     console.log(obj)
 
     txt = document.getElementById('textbox').value;
     if(val != 'delete'){
+      $(obj).attr("width","90")
       txt = txt + '' + val;
     }else{
       txt = txt.substr(0,(txt.length)-1);
