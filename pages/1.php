@@ -12,7 +12,7 @@
   }
   body{
     overflow:hidden;
-    /*background-color: #cc6633;*/
+    background-color: #cc6633;
 
   }
 
@@ -23,14 +23,14 @@
 <body>
   <div id="lightbox"></div>
     <div id="bubble"></div>
-    <div id="main" style="left:256px">
+    <div id="main" >
       <div id="loader">
       <img id="loader1" src="../images/loader.gif" >
       <img id="preparing" src="../images/getting-ready.gif">
     </div>
 
       <div id="survey">
-      <img  src="../images/intro-v2.gif"  alt="Animation of a hand poking another hand"/>
+      <img  src="../images/intro.gif"  alt="Animation of a hand poking another hand"/>
 
 </div><!-- close #survey -->
 

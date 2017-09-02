@@ -1,167 +1,142 @@
-<?php include('inc.php'); ?><!DOCTYPE html>
+<?php include('inc.php'); ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- redirect after 120 seconds--> <meta http-equiv="refresh" content="180;url=1.php" />  <title>If you have any further comments please tell us in the box below</title>
-  <meta name="description" content="Animated comments on a typewriter">
+  <!-- redirect after 120 seconds--> <meta http-equiv="refresh" content="180;url=1.php" />  <title>Please use three words to describe your experience:</title>
+  <meta name="description" content="A typewriter spits into a an antique voice recorder that recoils under the impact">
   <meta name="author" content="Dane Watkins">
   <!-- <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="../images/survey.css">
+
   <style>
+    body{
+      /*cursor: crosshair;
+      overflow:hidden;*/
+      background-color: #BDDD99;
+
+    }
+
+    #main{
+      position:absolute;
+      top:0px;
+      left:0px;
+      background: red;
+      width:1280px;
+      height:800px;
+    }
     #keyboard{
+      background: yellow1;
       position:absolute;
-      top:200px;
-      left:150px;
-      background: red1;
-      width:1080px;
-      height:768px;
+      width:1100px;
+      left:90px;
+      height:300px;
+      top:410px;
     }
+
     .rows{
-      opacity:0;
-      margin-top:4px;
+      background: green1;
+      width:1100px;
+      text-align: center;
     }
-    .keys{
-      background: blue;
-      width:65px;
-      height: 60px;
-      display:inline-block;
-      margin-left:4px;
+    .keys {
+      height:90px;
     }
-    #row1{
-      margin-top:100px;
-    }
-    #row2{
-      margin-top:192px;
-    }
-    #row3{
-      margin-top:3px;
-    }
-    #row4{
-      margin-top: 7px;
-    }
-    #row5{
-      margin-top: 9px;
-    }
-    #words{
-      position:absolute;
-      top:150px;
-      left:410px;
-    }
-    textarea
-    {
+
+    textarea:focus{
+       outline: none;
+     }
+
+    textarea{
+      position: absolute;
+      background: transparent;
+      top:81px;
+      left:475px;
       font-family: 'myFirstFont', cursive;
       border: yellow;
-      width:200px;
+      width:320px;
+      height:138px;
       padding:5px;
-      font-size: 20px;
-    }
+      font-size: 24px;
+      line-height: 38px;
+      }
+      #delete{
+        position: absolute;
+        top:276px;
+        left:760px;
+        z-index: 89;
+        height:110px;
+      }
+      .nav{
+        left:1158px;
+      }
+
   </style>
-  <script>
-  function clicked(val){
-    console.log(val)
-  	var txt;
-  	txt = document.getElementById('textbox').value;
-  	 if(val != 'delete'){
-  	txt = txt + '' + val;
-  	}
-  	else{
-  	   txt = txt.substr(0,(txt.length)-1);
-  	}
-  	document.getElementById('textbox').value = txt;
-  	}
-  </script>
-<style>
-  #survey{
-    display: none;
-  }
-  body{
-    /*cursor: none;*/
-    overflow:hidden;
-    background-color: #BDDD99;
-
-  }
-
-</style>
-<link rel="stylesheet" type="text/css" href="../images/survey.css">
 <script src="../images/jquery.min.js"></script>
-
 <!-- <script type="text/javascript" src="../images/survey.js"></script> -->
 </head>
 <body>
-  <div id="lightbox"></div>
-    <div id="bubble"></div>
-    <div id="main">
-      <div id="loader">
-      <img id="loader1" src="../images/loader.gif" >
-      <img id="preparing" src="../images/getting-ready.gif">
+  <div id="main">
+    <div id="survey">
+      <img  src="../images/comments-1280.gif"  alt="Animation of a hand poking another hand"/>
+    </div><!-- close #survey -->
+    <textarea rows="5" cols="57" id="textbox"  placeholder="If you have any further comments please tell us in this box " autofocus></textarea><br>
+    <img  id="delete" class="keys"  src="../images/keys/delete.gif" onclick="clicked(this,'delete');"/>
+    <div id="keyboard">
+
+      <div id="row2" class="rows">
+        <img class="keys" src="../images/keys/key-q.gif" onclick="clicked(this,'Q');"/>
+        <img class="keys" src="../images/keys/key-w.gif" onclick="clicked(this,'W');"/>
+        <img class="keys" src="../images/keys/key-e.gif" onclick="clicked(this,'E');"/>
+        <img class="keys" src="../images/keys/key-r.gif" onclick="clicked(this,'R');"/>
+        <img class="keys" src="../images/keys/key-t.gif" onclick="clicked(this,'T');"/>
+        <img class="keys" src="../images/keys/key-y.gif" onclick="clicked(this,'Y');"/>
+        <img class="keys" src="../images/keys/key-u.gif" onclick="clicked(this,'U');"/>
+        <img class="keys" src="../images/keys/key-i.gif" onclick="clicked(this,'I');"/>
+        <img class="keys" src="../images/keys/key-o.gif" onclick="clicked(this,'O');"/>
+        <img class="keys" src="../images/keys/key-p.gif" onclick="clicked(this,'P');"/>
+      </div>
+      <div id="row3" class="rows">
+        <img class="keys" src="../images/keys/key-a.gif" onclick="clicked(this,'A');"/>
+        <img class="keys" src="../images/keys/key-s.gif" onclick="clicked(this,'S');"/>
+        <img class="keys" src="../images/keys/key-d.gif" onclick="clicked(this,'D');"/>
+        <img class="keys" src="../images/keys/key-f.gif" onclick="clicked(this,'F');"/>
+        <img class="keys" src="../images/keys/key-g.gif" onclick="clicked(this,'G');"/>
+        <img class="keys" src="../images/keys/key-h.gif" onclick="clicked(this,'H');"/>
+        <img class="keys" src="../images/keys/key-j.gif" onclick="clicked(this,'J');"/>
+        <img class="keys" src="../images/keys/key-k.gif" onclick="clicked(this,'K');"/>
+        <img class="keys" src="../images/keys/key-l.gif" onclick="clicked(this,'L');"/>
+      </div>
+      <div id="row4" class="rows">
+        <img class="keys" src="../images/keys/key-z.gif" onclick="clicked(this,'Z');"/>
+        <img class="keys" src="../images/keys/key-x.gif" onclick="clicked(this,'X');"/>
+        <img class="keys" src="../images/keys/key-c.gif" onclick="clicked(this,'C');"/>
+        <img class="keys" src="../images/keys/key-v.gif" onclick="clicked(this,'V');"/>
+        <img class="keys" src="../images/keys/key-b.gif" onclick="clicked(this,'B');"/>
+        <img class="keys" src="../images/keys/key-n.gif" onclick="clicked(this,'N');"/>
+        <img class="keys" src="../images/keys/key-m.gif" onclick="clicked(this,'M');"/>
+        <img class="keys" id="submit-gif" src="../images/keys/submit.gif" />
+      </div>
+      <div id="row5" class="rows">
+        <img class="keys" src="../images/keys/key-00-exclamation.gif" onclick="clicked(this,'!');"/>
+        <img class="keys" src="../images/keys/key-00-question.gif" onclick="clicked(this,'?');"/>
+        <img class="keys" src="../images/keys/space-bar.gif" onclick="clicked(this,' ');"/>
+        <img class="keys" src="../images/keys/key-00-comma.gif" onclick="clicked(this,',');"/>
+        <img class="keys" src="../images/keys/key-00-period.gif" onclick="clicked(this,'.');"/>
+      </div>
     </div>
 
-      <div id="survey">
-      <img  src="../images/comments.gif"  alt="Animated comments on a typewriter"/>
-  <div id="words">
-    <textarea rows="4" cols="30" id="textbox"  placeholder="If you have any further comments please tell us in this box "></textarea><br>
-    </div>
-  <div id="keyboard">
-
-  <div id="del" class="keys" style="Background;red;position:absolute;top:110px;left:430px;width:160px;opacity:0;" onclick="clicked('delete');"/></div>
-
-  <div id="row2" class="rows">
-    <div id="" class="keys" style="width:75px;height:68px;margin-top:14px;" onclick="clicked('q');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('w');"/></div>
-    <div id="" class="keys" style="margin-left:6px;width:71px;" onclick="clicked('e');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('r');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('t');"/></div>
-    <div id="" class="keys" style="margin-left:2px;" onclick="clicked('y');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('u');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('i');"/></div>
-    <div id="" class="keys" style="margin-bottom:2px;" onclick="clicked('o');"/></div>
-    <div id="" class="keys" style="margin-bottom:4px;margin-left:5px;" onclick="clicked('p');"/></div>
-  </div>
-  <!-- <div id="" class="keys" style=";" onclick="clicked('[');"/></div>
-  <div id="" class="keys" style=";" onclick="clicked(']');"/></div>
-  <div id="" class="keys" style=";" onclick="clicked('\\');"/></div> -->
-  <div id="row3" class="rows">
-    <div id="" class="keys" style="margin-left:50px;" onclick="clicked('a');"/></div>
-    <div id="" class="keys" style="margin-left:7px;" onclick="clicked('s');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('d');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('f');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('g');"/></div>
-    <div id="" class="keys" style="margin-left:10px;" onclick="clicked('h');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('j');"/></div>
-    <div id="" class="keys" style="margin-bottom:2px;" onclick="clicked('k');"/></div>
-    <div id="" class="keys" style="margin-left:10px;margin-bottom:3px;" onclick="clicked('l');"/></div>
-
-  </div>
-  <div id="row4" class="rows">
-    <div id="" class="keys" style="margin-left:85px;" onclick="clicked('z');"/></div>
-    <div id="" class="keys" style="margin-left:8px;" onclick="clicked('x');"/></div>
-    <div id="" class="keys" style="margin-left:8px;" onclick="clicked('c');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('v');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('b');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('n');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('m');"/></div>
-    <div id="next" class="keys" style="width:150px;margin-left:10px;margin-bottom:3px;"/></div>
-  </div>
-
-
-  <div id="row5" class="rows">
-    <div id="" class="keys" style="margin-left:68px;;" onclick="clicked('!');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('?');"/></div>
-    <div id="" class="keys" style="margin-left:20px;width:370px;" onclick="clicked(' ');"/></div>
-    <div id="" class="keys" style="margin-left:10px;" onclick="clicked(',');"/></div>
-    <div id="" class="keys" style=";" onclick="clicked('.');"/></div>
-  </div>
-</div>
-
-</div><!-- close #survey -->
-<div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
-</div><!-- close #main -->
+    <div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
+  </div><!-- close #main -->
 </body>
 <script type="text/javascript">
-var imageRoot="../images/";
-var locale="Arnolfini";
-var pageNo=22;
-var nextPage=23;
+  var imageRoot="../images/";
+  var locale="Arnolfini";
+  var pageNo=22;
+  var nextPage=23;
+  var url = nextPage+".php";
+
 
 </script>
-<script src="survey.js"></script>
+<script src="survey-keyboard.js"></script>
 </html>

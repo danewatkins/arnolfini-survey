@@ -1,4 +1,13 @@
 var txt;
+var form = document.createElement("form");
+form.setAttribute("method", "post");
+form.setAttribute("action", url);
+var hiddenField = document.createElement("input");
+var hiddenField2 = document.createElement("input");
+hiddenField.setAttribute("type", "hidden");
+hiddenField.setAttribute("name", "answer");
+hiddenField2.setAttribute("type", "hidden");
+hiddenField2.setAttribute("name", "page");
 $(".keys").on( "touchstart mousedown", function(e){
 
 
@@ -33,19 +42,21 @@ $(".keys").on( "touchstart mousedown", function(e){
     // $(obj).attr("src",imgOrig)
   }
   $('#submit-gif').one( "touchstart mousedown", function(e){
-    var form = document.createElement("form");
-    form.setAttribute("method", "post");
-    form.setAttribute("action", url);
-    var hiddenField = document.createElement("input");
-    var hiddenField2 = document.createElement("input");
-    hiddenField.setAttribute("type", "hidden");
-    hiddenField.setAttribute("name", "answer");
-    hiddenField2.setAttribute("type", "hidden");
-    hiddenField2.setAttribute("name", "page");
+
     hiddenField.setAttribute("value", txt);
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);
     form.appendChild(hiddenField2);
     document.body.appendChild(form); // inject the form object into the body section
     form.submit();
+    });
+
+    $("#skip").on( "touchstart mousedown", function(e){
+      console.log("skippping")
+      hiddenField.setAttribute("value", "skip");
+      hiddenField2.setAttribute("value", pageNo);
+      form.appendChild(hiddenField);
+      form.appendChild(hiddenField2);
+      document.body.appendChild(form); // inject the form object into the body section
+      form.submit();
     });

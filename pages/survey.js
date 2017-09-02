@@ -67,6 +67,8 @@ if(pageNo==15||pageNo==16||pageNo==19||pageNo==22||pageNo==12){
   });
   $('#submit-gif').one( "touchstart mousedown", function(e){
     // Create the form object
+    $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
+
     $("#bubble").hide()
     if(pageNo==12||pageNo==19||pageNo==22){
       ans=$("#textbox").val()

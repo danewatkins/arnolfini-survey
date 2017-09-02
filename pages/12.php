@@ -42,18 +42,7 @@
     .keys {
       height:90px;
     }
-    #row1{
-      margin-top:0px;
-    }
-    #row2{
-      margin-top:0px;
-    }
-    #row3{
-      margin-top:0px;
-    }
-    #row4{
-      margin-top: 0px;
-    }
+
     textarea:focus{
        outline: none;
      }
@@ -76,6 +65,9 @@
         left:750px;
         z-index: 89;
         height:110px;
+      }
+      .nav{
+        left:1158px;
       }
 
   </style>

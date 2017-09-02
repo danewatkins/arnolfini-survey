@@ -18,7 +18,7 @@
       padding:5px;
       font-size: 20px;
   }
-  #next{
+  #submit-gif{
     opacity:0;
     background: red;
     width:260px;
@@ -71,8 +71,8 @@
 <!-- <script type="text/javascript" src="../images/survey.js"></script> -->
 </head>
 <body>
-  <div id="lightbox"></div>
-    <div id="bubble"></div>
+  <!-- <div id="lightbox"></div>
+    <div id="bubble"></div> -->
     <div id="main">
       <div id="loader">
       <img id="loader1" src="../images/loader.gif" >
@@ -96,7 +96,7 @@
   <div id="facebook" class="inner"></div>
   <div id="instagram" class="inner"></div>
 </div>
-<div id="next"></div>
+<div id="submit-gif"></div>
 <script type="text/javascript">
   $(".inner").on( "mousedown", function(e){
           lis=[];
@@ -124,5 +124,5 @@ var pageNo=16;
 var nextPage=17;
 
 </script>
-<script src="survey.js"></script>
+<script src="survey-marketing.js"></script>
 </html>
