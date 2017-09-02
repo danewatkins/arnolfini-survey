@@ -3,14 +3,14 @@ $(".keys").on( "touchstart mousedown", function(e){
 
 
     });
-  // $(".keys").on( "touchend mouseup mouseleave mousemove", function(e){
-  //   var imgSrc=$(this).attr("src")
-  //   imgSrc = imgSrc.substring(0, imgSrc.length - 3);
-  //   $(this).attr("src",imgSrc+"gif")
-  //
-  //     });
+  $(".keys").on( "touchend mouseup mouseleave mousemove", function(e){
+    var imgSrc=$(this).attr("src")
+    imgSrc = imgSrc.substring(0, imgSrc.length - 3);
+    $(this).attr("src",imgSrc+"gif")
+
+      });
   function clicked(obj,val){
-    clearTimeout(timer)
+    // clearTimeout(timer)
     console.log ($(obj).attr("src"))
     var imgSrc=$(obj).attr("src")
     var imgOrig=$(obj).attr("src")
@@ -25,7 +25,8 @@ $(".keys").on( "touchstart mousedown", function(e){
     }
     document.getElementById('textbox').value = txt;
     $('textarea').focus();
-    var timer = setTimeout(function(){ $(obj).attr("src",imgOrig) }, 120);
+    var timer = setTimeout(function(){ $(obj).attr("src",imgOrig) }, 200);
+
     // $(obj).attr("src",imgOrig)
   }
   $('#submit-gif').one( "touchstart mousedown", function(e){
