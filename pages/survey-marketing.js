@@ -22,6 +22,7 @@ hiddenField2.setAttribute("name", "page");
 
   $('#submit-gif').one( "touchstart mousedown", function(e){
     // Create the form object
+    e.preventDefault();
     $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
 
     $('.inner input:checked').each(function() {
@@ -40,7 +41,7 @@ hiddenField2.setAttribute("name", "page");
 
 
   $("#skip").on( "touchstart mousedown", function(e){
-    console.log("skippping")
+    e.preventDefault();
     hiddenField.setAttribute("value", "skip");
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);

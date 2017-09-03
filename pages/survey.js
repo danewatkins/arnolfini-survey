@@ -26,21 +26,22 @@ var touchRight = 1070
 var touchTop = 500
 var touchBottom = 750
 if (pageNo==17){
-  var touchLeft = 877
-  var touchRight = 1078
-  var touchTop = 58
-  var touchBottom = 286
+  touchLeft = 877
+  touchRight = 1078
+  touchTop = 58
+  touchBottom = 286
 }
 if (pageNo==20){
-  var touchLeft = 366
-  var touchRight = 884
-  var touchTop = 211
-  var touchBottom = 678
+  touchLeft = 366
+  touchRight = 884
+  touchTop = 211
+  touchBottom = 678
 }
 
 
   $("#lightbox").on( "touchstart mousedown", function(e){
     // does it need a touchmove capture event?
+    e.preventDefault();
     if(e.type == 'touchstart' || e.type == 'touchmove' || e.type == 'touchend' || e.type == 'touchcancel'){
       var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
       out.x = touch.pageX;
@@ -62,8 +63,9 @@ if (pageNo==20){
 
 
   });
-  $('#submit-gif').one( "touchstart mousedown", function(e){
+  $('#submit-gif').on( "touchstart mousedown", function(e){
     // Create the form object
+    e.preventDefault();
     $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
 
     $("#bubble").hide()
@@ -77,9 +79,8 @@ if (pageNo==20){
     form.submit();
   });
 
-
-  $("#skip").on( "touchstart mousedown", function(e){
-    console.log("skippping")
+  $("#skip").one("touchstart mousedown",  function(e){
+    e.preventDefault();
     hiddenField.setAttribute("value", "skip");
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);

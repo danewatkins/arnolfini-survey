@@ -42,7 +42,7 @@ $(".keys").on( "touchstart mousedown", function(e){
     // $(obj).attr("src",imgOrig)
   }
   $('#submit-gif').one( "touchstart mousedown", function(e){
-
+    e.preventDefault();
     hiddenField.setAttribute("value", txt);
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);
@@ -52,7 +52,7 @@ $(".keys").on( "touchstart mousedown", function(e){
     });
 
     $("#skip").on( "touchstart mousedown", function(e){
-      console.log("skippping")
+      e.preventDefault();
       hiddenField.setAttribute("value", "skip");
       hiddenField2.setAttribute("value", pageNo);
       form.appendChild(hiddenField);
