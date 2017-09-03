@@ -50,6 +50,7 @@ if (pageNo==20){
       out.x = e.pageX;
       out.y = e.pageY;
     }
+    if (pageNo==17)
     console.log(out.y)
     if(out.x > touchLeft && out.x < touchRight && out.y > touchTop && out.y < touchBottom){
       $("#bubble").html("<img width='65' src='"+imageRoot+"splatt2.gif'>");

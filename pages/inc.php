@@ -15,7 +15,6 @@ if ($posted_page==2){
 		}else{
 			$_SESSION["under16"]="over";
 	}
-	echo $_SESSION["under16"];
 
 }
 

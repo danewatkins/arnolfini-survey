@@ -16,6 +16,16 @@
     background-color: #999966;
 
   }
+  #press-me{
+    position: absolute;
+    top:58px;
+    left:747px;
+    width:200px;
+    height:300px;
+    background: red;
+    opacity: 0;
+    cursor: pointer;
+  }
 
 </style>
 <link rel="stylesheet" type="text/css" href="../images/survey.css">
@@ -24,19 +34,18 @@
 <!-- <script type="text/javascript" src="../images/survey.js"></script> -->
 </head>
 <body>
-  <div id="lightbox"></div>
-    <div id="bubble"></div>
+
     <div id="main">
       <div id="loader">
       <img id="loader1" src="../images/loader.gif" >
       <img id="preparing" src="../images/getting-ready.gif">
     </div>
 
-      <div id="survey">
+    <div id="survey">
       <img  src="../images/questions2.gif"  alt="Vintage mutant mechanical calculator attacks candlestick telephone"/>
+    </div><!-- close #survey -->
+    <div id="press-me"></div>
 
-</div><!-- close #survey -->
-<div id="skip" class="nav"><img  src="../images/skip.gif" width="50"></div>
 </div><!-- close #main -->
 </body>
 <script type="text/javascript">
@@ -44,7 +53,12 @@ var imageRoot="../images/";
 var locale="Arnolfini";
 var pageNo=17;
 var nextPage=18;
+$("#survey").fadeIn(1000)
+$("#press-me").on( "touchstart mousedown", function(e){
+  e.preventDefault();
+  window.location.href = '18.php';
 
+  });
 </script>
-<script src="survey.js"></script>
+<!-- <script src="survey.js"></script> -->
 </html>
