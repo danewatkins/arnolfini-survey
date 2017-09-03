@@ -78,6 +78,7 @@ $: sudo chmod 0777 /var/www/html/arnolfini/answers
 
 ### Monitor Pi core temperature
 The previous version of the kiosk failed due to multiple reasons, one of which may have been overheating. We were using a Pi 3 in an enclosed space in a warm gallery. This script allows remote monitoring of the Pi's core temperature. It is not necessary if the Pi is registered as device with remote-iot.com as their service provide temperature monitoring as well as remote access.
+3rd September 2017, the Pi's temperature has remained stable and it is unlikely that overheating was the cause of the problem.
 ```
 $: /opt/vc/bin/vcgencmd measure_temp
 ```
@@ -133,7 +134,7 @@ add these lines
  */10 * * * * /var/www/html/arnolfini-survey/scripts/temp.sh
  1 * * * * /var/www/html/syncAnswers
 ```
-This records the Pi's core temperature every 10 minutes and synchronises the answers folder with the website every hour.
+This records the Pi's core temperature every 10 minutes and syncs the answers folder with the website every hour. This is not necessary if the pi is connected via remote-iot.com as their service records the pi's temperature.
 ```
 $: sudo chmod 0777 /var/www/html/arnolfini-survey/scripts/temp.sh
 $: chmod 0777 /var/www/html/syncAnswers
@@ -194,11 +195,11 @@ sudo vim etc/lightdm/lightdm.conf
 ```
 uncomment
 ```
-#xserver-command=X
+#xserver-command = X
 ```
 add -nocursor on line 91
 ```
-#xserver-command=X -nocursor
+#xserver-command = X -nocursor
 ```
 ### Connect remotely to Pi via
 remote-iot.com
