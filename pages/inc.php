@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors',true);
-var_dump($_POST);
 session_start();
 if(!isset($_SESSION["under16"]))$_SESSION["under16"]="";
 if(isset($_POST["page"])){
@@ -10,14 +9,14 @@ if(isset($_POST["page"])){
 	$posted_page=0;
 }
 if ($posted_page==2){
-	if($_POST["answer"]!="skip"){
-	$answer=explode(",",$_POST["answer"]);
-	if($answer[0]>206){
-		$_SESSION["under16"]="over";
-	}else{
-		$_SESSION["under16"]="under";
+		$answer=explode(",",$_POST["answer"]);
+		if($answer[0]<206 && $_POST["answer"]!="skip"){
+			$_SESSION["under16"]="under";
+		}else{
+			$_SESSION["under16"]="over";
 	}
-	}
+	echo $_SESSION["under16"];
+
 }
 
 if(isset($_POST["answer"])){

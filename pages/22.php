@@ -11,10 +11,8 @@
 
   <style>
     body{
-      /*cursor: crosshair;
-      overflow:hidden;*/
+      overflow:hidden;
       background-color: #BDDD99;
-
     }
 
     #main{
