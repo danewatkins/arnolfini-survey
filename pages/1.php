@@ -1,11 +1,13 @@
-<?php include('inc.php'); ?><!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-    <title>Animated audience evaluation survey by Dane Watkins</title>
+  <meta http-equiv="refresh" content="180;url=1.php" />
+  <title>Animated audience evaluation survey by Dane Watkins</title>
   <meta name="description" content="Animation of a hand poking another hand">
   <meta name="author" content="Dane Watkins">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet"> -->
+
 <style>
   #survey{
     display: none;

@@ -1,10 +1,6 @@
 $("#survey").fadeIn(1000)
-// $( "#lightbox" ).append("<img width='128px' id='submit-gif' src='"+imageRoot+"keys/submit.gif'>");
-// $("#submit-gif").css("margin-left","1130px");
-// $("#submit-gif").css("margin-top","600px");
 
 var lis = [];
-var touchme=1
 var method = method || "post"; // post (set to default) or get
 var url = nextPage+".php";
 var out = {x:0, y:0};
@@ -21,10 +17,8 @@ hiddenField2.setAttribute("name", "page");
 
 
   $('#submit-gif').one( "touchstart mousedown", function(e){
-    // Create the form object
     e.preventDefault();
     $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
-
     $('.inner input:checked').each(function() {
         lis.push($(this).attr('name'));
     });

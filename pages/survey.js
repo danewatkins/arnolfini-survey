@@ -1,10 +1,8 @@
 $("#survey").fadeIn(1000)
-$( "#lightbox" ).append("<img width='180px' id='submit-gif' src='"+imageRoot+"keys/submit.gif'>");
+$("#lightbox" ).append("<img width='180px' id='submit-gif' src='"+imageRoot+"keys/submit.gif'>");
 $("#submit-gif").css("margin-left","1080px");
 $("#submit-gif").css("margin-top","650px");
 
-var lis = [];
-var touchme=1
 var method = method || "post"; // post (set to default) or get
 var url = nextPage+".php";
 var out = {x:0, y:0};
@@ -19,18 +17,11 @@ hiddenField.setAttribute("name", "answer");
 hiddenField2.setAttribute("type", "hidden");
 hiddenField2.setAttribute("name", "page");
 
-var Xpos
-var Ypos
 var touchLeft = 200
 var touchRight = 1070
 var touchTop = 500
 var touchBottom = 750
-if (pageNo==17){
-  touchLeft = 877
-  touchRight = 1078
-  touchTop = 58
-  touchBottom = 286
-}
+
 if (pageNo==20){
   touchLeft = 366
   touchRight = 884
@@ -50,8 +41,8 @@ if (pageNo==20){
       out.x = e.pageX;
       out.y = e.pageY;
     }
-    if (pageNo==17)
-    console.log(out.y)
+    // console.log("out.x = "+out.x)
+    // console.log("out.y = "+out.y)
     if(out.x > touchLeft && out.x < touchRight && out.y > touchTop && out.y < touchBottom){
       $("#bubble").html("<img width='65' src='"+imageRoot+"splatt2.gif'>");
       $("#bubble").css("left",""+(out.x-20)+"px");
@@ -59,19 +50,13 @@ if (pageNo==20){
       $("#lightbox").fadeTo( "slow", 1 );
       $("#submit-gif").css("z-index","99");
     }
-
-
-
-
   });
+
   $('#submit-gif').on( "touchstart mousedown", function(e){
-    // Create the form object
     e.preventDefault();
     $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
-
     $("#bubble").hide()
     ans=(out.x-margin)+","+out.y
-
     hiddenField.setAttribute("value", ans);
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);

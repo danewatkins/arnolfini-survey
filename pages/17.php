@@ -60,5 +60,4 @@ $("#press-me").on( "touchstart mousedown", function(e){
 
   });
 </script>
-<!-- <script src="survey.js"></script> -->
 </html>
