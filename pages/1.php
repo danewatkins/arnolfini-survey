@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="180;url=1.php" />
   <title>Animated audience evaluation survey by Dane Watkins</title>
   <meta name="description" content="Animation of a hand poking another hand">
   <meta name="author" content="Dane Watkins">
@@ -43,6 +42,13 @@
   var locale="Arnolfini";
   var pageNo=1;
   var nextPage=2;
+  function goTo() {
+    console.log("whatever");
+    window.location.href = '1.php';
+  }
+  $("#lightbox").on( "touchstart mousedown", function(e){
+    setTimeout(goTo, 20000)
+  });
   </script>
   <script src="survey.js"></script>
   </html>

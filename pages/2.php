@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="180;url=1.php" />  <title>How old are you?</title>
+  <meta http-equiv="refresh" content="180;url=1.php" />
+  <title>How old are you?</title>
   <meta name="description" content="The line of life from baby to bent and aging pensioner">
   <meta name="author" content="Dane Watkins">
   <!-- <link href="https://fonts.googleapis.com/css?family=Walter+Turncoat" rel="stylesheet"> -->
