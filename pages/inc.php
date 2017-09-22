@@ -19,7 +19,7 @@ if ($posted_page==2){
 }
 
 if(isset($_POST["answer"])){
-	if($_SESSION["under16"]=="under"){
+	if($_SESSION["under16"]=="under"&&$posted_page>17){
 		$posted_answer="under 16";
 	}else{
 		$posted_answer= $_POST["answer"];
