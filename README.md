@@ -41,10 +41,10 @@ $: sudo apt-get upgrade
 $: sudo apt-get dist-upgrade
 ```
 
-!!Change Password
+!! CHANGE PASSWORD !!
 Raspberry Pi default username is 'pi' and the default password is 'raspberry' if you don't change the password and allow ssh on the Pi then anyone will be able to gain access to the pi and all its data.
 ```
-sudo raspi-config
+$: sudo raspi-config
 ```
 
 ### Install apache
@@ -150,7 +150,7 @@ and uncomment the line
 ```
 restart rsyslog via
 ```
-$ sudo /etc/init.d/rsyslog restart
+$: sudo /etc/init.d/rsyslog restart
 ```
 Thanks to https://raspberrypi.stackexchange.com/questions/3741/where-do-cron-error-message-go
 
@@ -158,7 +158,10 @@ Check cron log to see if the crontabs are working
 ```
 $: sudo vim /var/log/cron.log
 ```
-
+view the log at
+```
+$:/var/log/cron.log
+```
 ### Set up Pi for kiosk mode
 Copy the autostart file into home .config folder which is read on reboot.
 ```
