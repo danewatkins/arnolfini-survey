@@ -43,13 +43,23 @@ if (pageNo==20){
     }
     // console.log("out.x = "+out.x)
     // console.log("out.y = "+out.y)
-    if(out.x > touchLeft && out.x < touchRight && out.y > touchTop && out.y < touchBottom){
+    // uncomment line below
+    // if(out.x > touchLeft && out.x < touchRight && out.y > touchTop && out.y < touchBottom){
       $("#bubble").html("<img width='65' src='"+imageRoot+"splatt2.gif'>");
       $("#bubble").css("left",""+(out.x-20)+"px");
       $("#bubble").css("top",out.y-110+"px");
       $("#lightbox").fadeTo( "slow", 1 );
-      $("#submit-gif").css("z-index","99");
-    }
+      // uncomment submit
+      // $("#submit-gif").css("z-index","99");
+      ans=(out.x-margin)+","+out.y
+      hiddenField.setAttribute("value", ans);
+      hiddenField2.setAttribute("value", pageNo);
+      form.appendChild(hiddenField);
+      form.appendChild(hiddenField2);
+      document.body.appendChild(form); // inject the form object into the body section
+      form.submit();
+      // uncomment line below
+    // }
   });
 
   $('#submit-gif').on( "touchstart mousedown", function(e){
