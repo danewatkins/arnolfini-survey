@@ -1,8 +1,7 @@
 <?php
-// session_start();
 error_reporting(E_ALL);
 ini_set('display_errors',true);
-
+session_start();
 if(!isset($_SESSION["under16"]))$_SESSION["under16"]="";
 if(isset($_POST["page"])){
 	$posted_page = $_POST["page"];

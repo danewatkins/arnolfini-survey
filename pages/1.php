@@ -1,5 +1,4 @@
-<!-- delete  -->
-<?php include('inc.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +30,10 @@
       <img id="preparing" src="../images/getting-ready.gif">
     </div>
 
-    <div id="survey">
-      <div style="position:absolute;font-size:400px;color:yellow;font-weight:800;">
-        demo
-      </div>
+      <div id="survey">
       <img  src="../images/intro.gif"  alt="Animation of a hand poking another hand"/>
-    </div><!-- close #survey -->
+
+</div><!-- close #survey -->
 
 </div><!-- close #main -->
 </body>
@@ -44,9 +41,7 @@
   var imageRoot="../images/";
   var locale="Arnolfini";
   var pageNo=1;
-  // var nextPage=2;
-  //  loops back, uncomment above
-  var nextPage=1;
+  var nextPage=2;
   function goTo() {
     console.log("whatever");
     window.location.href = '1.php';
