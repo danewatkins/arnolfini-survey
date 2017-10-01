@@ -8,6 +8,8 @@ var url = nextPage+".php";
 var out = {x:0, y:0};
 var margin = 128;
 var form = document.createElement("form");
+var answerX;
+var answerY;
 form.setAttribute("method", method);
 form.setAttribute("action", url);
 var hiddenField = document.createElement("input");
@@ -49,6 +51,8 @@ if (pageNo==20){
       $("#bubble").css("top",out.y-110+"px");
       $("#lightbox").fadeTo( "slow", 1 );
       $("#submit-gif").css("z-index","99");
+      answerX=out.x;
+      answerY=out.y;
     }
   });
 
@@ -56,7 +60,7 @@ if (pageNo==20){
     e.preventDefault();
     $("#submit-gif").attr("src",imageRoot+"keys/submit.png");
     $("#bubble").hide()
-    ans=(out.x-margin)+","+out.y
+    ans=(answerX-margin)+","+answerY
     hiddenField.setAttribute("value", ans);
     hiddenField2.setAttribute("value", pageNo);
     form.appendChild(hiddenField);
