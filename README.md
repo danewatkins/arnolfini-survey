@@ -190,9 +190,12 @@ stops the users from going back a page by swiping left
 --incognito  creates a new Chrome incognito session
 
 ### Hide cursor
-There are several Raspberry Pi kiosk tutorials that recommend using ```unclutter``` to hide the mouse. Our first version of the survey used unclutter and it may have been one of the reasons why the touch failed, it could also have been the heat and the poor connectivity. But there were times when touch wouldn't work navigating the local operating system.
+There are several Raspberry Pi kiosk tutorials that recommend using ```unclutter``` to hide the mouse. Our first version of the survey used unclutter and it may have been one of the reasons why the touch failed, it could also have been the heat and the poor connectivity. But there were times when touch wouldn't work navigating the local operating system. Personaly I would advise against using unclutter, I don't think it is very reliable.
 
-Using css ```cursor:none``` to hide the cursor doesn't work in a kiosk. On reboot the mouse shows and is only hidden with a mouse movement not a touch movement. The mouse can be hidden through the x-server.
+Using css ```cursor:none``` to hide the cursor doesn't work in a kiosk. On reboot the mouse shows and is only hidden with a mouse movement not a touch movement. 
+
+We found that the best way to hide the mouse was through the x-server.
+
 ```
 sudo vim etc/lightdm/lightdm.conf
 ```
@@ -206,3 +209,5 @@ add -nocursor on line 91
 ```
 ### Connect remotely to Pi via
 remote-iot.com
+
+The free tier on remote-iot.com put a lots of resources on one server which can and does lose connection with the pi. This is obviously frustrating if you are a long way from the pi. The way to counter this problem is to run a daily cron job that re-establishes the connection, that is create a cron-jon of the intital shell command that create a link between the pi and remote-iot.com.
