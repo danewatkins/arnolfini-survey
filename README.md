@@ -210,4 +210,4 @@ add -nocursor on line 91
 ### Connect remotely to Pi via
 remote-iot.com
 
-The free tier on remote-iot.com put a lots of resources on one server which can and does lose connection with the pi. This is obviously frustrating if you are a long way from the pi. The way to counter this problem is to run a daily cron job that re-establishes the connection, that is create a cron-jon of the intital shell command that create a link between the pi and remote-iot.com.
+The free tier on remote-iot.com put a lots of resources on one server which can and does lose connection with the pi. This is obviously frustrating if you are a long way from the pi. The way to counter this problem is to run a daily cron job that re-establishes the connection, that is create a cron-jon of the intital shell command that creates a link between the pi and remote-iot.com.
